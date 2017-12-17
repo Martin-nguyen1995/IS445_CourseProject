@@ -1,0 +1,35 @@
+<div class="header">
+    <div class="logo">
+        Contact Management
+        <a href="/#/" class='btn btn-primary pull-right'>Index </a>
+        <a href="/#addContact">
+            <button type="button" class="btn btn-primary pull-right">New Contact</button>
+        </a>
+    </div>
+</div>
+<div class="container">
+    <h2>Contact List</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in allContacts">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.phone}}</td>
+                <td>
+                    <button type="button" class="btn btn-success" ng-click="editContact(item)">Edit</button>
+                    <button type="button" class="btn btn-danger" ng-click="deleteContact(item)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

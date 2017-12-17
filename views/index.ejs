@@ -1,0 +1,33 @@
+<% include header %>
+
+<h3> Contact List </h3>
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email<th>
+            <th>Phone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            <% if (entries.length) { %>
+                <% entries.forEach(function(entry) { %>
+                <tr>
+                    <td> <%= entry.name %> </td>
+                    <td> <%= entry.email %> <td>
+                    <td> <%= entry.phone %> <td>
+                    <td> 
+                        <a href='/details' class="btn btn-success">Details</a>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    <td>
+                </tr>
+                 
+            <% }) %>
+            <% } else { %>
+                No entries! <a href="/new-user">Add one!</a>
+            <% } %>
+        </tbody>
+</table>
+<% include footer %>

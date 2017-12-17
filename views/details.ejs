@@ -1,0 +1,32 @@
+<% include header %>
+
+<h2>Details</h2>
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Email<th>
+        <th>Phone</th>
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+        <% if (entries.length) { %>
+            <% entries.forEach(function(entry) { %>
+            <tr>
+                <td> <%= entry.name[1] %> </td>
+                <td> <%= entry.email[1] %> <td>
+                <td> <%= entry.phone[1] %> <td>
+                <td> 
+                    <a href='/details' class="btn btn-success">Details</a>
+                    <button type="button" class="btn btn-warning">Edit</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                <td>
+            </tr>
+             
+        <% }) %>
+        <% } else { %>
+            No entries! <a href="/new-user">Add one!</a>
+        <% } %>
+    </tbody>
+</table>
+<% include footer %>
